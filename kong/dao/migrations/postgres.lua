@@ -270,6 +270,10 @@ return {
           uris = { row.request_path }
         end
 
+        local query = [[
+          UPDATE apis SET %s WHERE id = 
+        ]]
+
         local _, err = dao.apis:update({
           hosts     = hosts,
           uris      = uris,
